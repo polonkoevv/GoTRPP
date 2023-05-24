@@ -1,0 +1,146 @@
+body{
+	background-color: #1F2833;
+}
+
+.login, .loginR{
+	
+    flex-basis: 360px;
+	border-radius: 20px;
+    padding: 40px;
+    
+    margin-top: 15vh;
+    
+    z-index: 1;
+   
+    
+    background-color: #204d87;
+
+}
+.loginR{
+	/* display: none; */
+}
+@media (max-width: 701px){
+
+	
+	.login, .loginR{
+		margin-top: 130px;
+		
+	}
+	
+
+}
+@media (max-width: 700px){
+	.img_logo{
+
+		transform: translateY(-17px);
+	}
+
+	.loginR{
+		margin-top: 110px;
+		padding: 35px;
+	}
+}
+.img_logo{
+	position: absolute;
+	left: calc(50% - 45px);
+	top: 30px;
+	height: 90px;
+	width: 90px;
+
+}
+.form{
+	position: absolute;
+	top:0;
+
+	left: 0;
+	justify-content: center;
+	display: flex;
+	margin: 0px;
+	width: 100%;
+	
+
+}
+body{
+
+	width: 100%;
+	height: 100%;
+	background: #1F2833;
+
+}
+.loginR button{
+	margin-top: 20px;
+}
+
+/*.loginR{
+	display: none;
+}*/
+.login_text p,
+.login_text a{
+	margin-top: 6px;
+	text-align: center;
+	margin-bottom: 3px;
+	color: #1E90FF;
+	cursor: pointer;
+}
+.form_login p{
+	text-align: right;
+	margin-top: -6px;
+	color: #1E90FF;
+	cursor: pointer;
+}
+
+.login_h h1{
+	color: black;
+	/* text-decoration: underline; */
+	text-align: center;
+
+	text-decoration-color: white;
+	font-family: Georgia;
+	font-size: 24px;
+	margin-bottom: -10px;
+}
+.login_h{
+	text-align: center;
+	margin-bottom: 40px;
+}
+.form_login input{
+	width: 100%;
+	height: 35px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	margin-bottom: 10px;
+	background: rgba(227, 227, 227, 0.5);
+	backdrop-filter: blur(10px);
+	border-style: none;
+}
+
+.form_login button{
+	background: linear-gradient(to left, #B621FE,#1FD1F9);
+	width: 100%;
+	opacity: 0.5;
+	height: 45px;
+/*	margin-top: -10px;*/
+	font-size: 19px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-style: none;
+	color: white;
+	margin-bottom: 20px;
+	transition: 0.3s;	
+}
+.inputs{
+	display: flex;
+	flex-wrap: wrap;
+}
+.form_login button:hover{
+	opacity: 1;
+}
+.form_login input::placeholder{
+	padding-left: 2%;
+	color: darkgrey;
+}
+

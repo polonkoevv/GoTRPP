@@ -1,0 +1,28 @@
+.account{
+    width: 40%;
+    max-height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+img{
+    height: 300px;
+}
+
+.photo{
+    /* height: 400px; */
+    background-color: gray;
+    border-radius: 20px;
+}
+
+.data{
+    padding: 20px;
+    /* height: 400px; */
+    height: 100%;
+    width: auto;
+    background-color: gray;
+    border-radius: 20px;
+    font-size: 30px;
+}
+

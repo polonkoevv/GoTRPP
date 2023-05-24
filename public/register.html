@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/reset1.css"> -->
+    <link rel="stylesheet" href="css/login.css">
+    <title>Document</title>
+</head>
+<body>
+		
+		<div class="form">
+
+				<div class="loginR">
+					<div class="login_h">
+						<h1>Регистарация</h1>
+			<p>Создайте аккаут<br>Пожалуйста, введите свои данные.</p>
+					</div>
+					<div class="form_login">
+						<form action="auth/register"   method="POST">
+							Имя 
+							<input name="name" class="name" placeholder="Имя" type="text">
+							<br>
+							Фамилия
+							<input name="surname" class="name" placeholder="Фамилия" type="text">
+							<br>
+							Имя пользователя
+							<input name="username" class="name" placeholder="Имя пользователя" type="text">
+							<br>
+							Пароль
+							<input name="password" class="password_reg" placeholder="Пароль" minlength="6" type="password">
+							<button name="" class="reg_button" type="submit">Зарегистрироваться</button>
+						</form>
+
+					</div>
+					<div class="login_text">
+						
+						<p><a href="login">Уже есть аккаунт? Войти</a></p>
+						<p><a href="/">На главную</a></p>
+						
+					</div>
+
+				</div>
+			</div>
+</body>
+</html>

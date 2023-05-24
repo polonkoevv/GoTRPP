@@ -1,0 +1,27 @@
+.content{
+    width: 80%;
+    color: white;
+    height: 80vh;
+
+
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.content p{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.name{
+    /* width: 50%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
