@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="sources/ico.png" type="image/png">.
+    <title>Movie</title>
+
+    <link rel="stylesheet" href="../css/reset1.css">
+    <link rel="stylesheet" href="../css/film.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/style1.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">ashar</a>
+            <div class="header__menu menu">
+                <div class="menu__icon">
+                    <span></span>
+                </div>
+            </div>
+            <nav class="menu__body">
+                <ul class="menu__list">
+                    <li><a data-goto="" href="index.html" class="menu__link">Главная</a></li>
+
+                    <li><a data-goto=".content__h1.movies" href="/kino" class="menu__link">Кино</a></li>
+                    <li><a data-goto=" " href="gallery.html" class="menu__link">Галерея</a></li>
+                    <li><a data-goto=" " href="addActor.html" class="menu__link">Добавить актера</a></li>
+                    <li><a data-goto=" " href="discussion.html" class="menu__link">Обсуждение</a></li>
+                    <li><a data-goto=" " href="/auth/welcome" class="menu__link">Вход</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="main">
+        <div class="container1">
+
+            <div class="photo"><img src={{.posterUrl}} alt="Здесь должно быть фото"></div>
+           
+            <div class="about">
+
+                <div class="actor-list">
+                    <span>В ролях: <br></span>
+                    {{ range .actors}}
+                    <span class="actor-name"><form action="/actor/" method="GET">
+                        <button style="text-decoration: underline;" name="id" value="{{.staffId}}" type="submit" class="description">{{.nameRu}}</button>
+                    </form></span>
+                    {{else}}<div><strong>no actors</strong></div>
+                {{end}}
+                </div>
+
+                <div class="genre">
+                    <span>Жанр: <br></span>
+                    <ul>
+                    {{ range .genres}}
+                    <li>{{.genre}}</li>
+                    {{else}}<div><strong>no actors</strong></div>
+                        {{end}}
+                    </ul>
+                </div>
+
+                <div class="buttons">
+                    <button><a href="https://1ww.frkp.live/?id={{.id}}">СМОТРЕТЬ</a></button>
+                    <form method="GET" action="./addtofav"><button name="id" value="{{.id}}">ДОБАВИТЬ В ИЗБРАННОЕ</button></form>
+                </div>
+
+            </div>
+
+            <div class="description">
+                {{.description}}
+            </div>
+        </div>
+    </main>
+
+    <a data-goto=".header" href="kino.html" class="menu__link toUp" id="toUp">Вверх <i class="fa fa-arrow-up"
+            aria-hidden="false"></i></a>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="about__us">
+                <h2>О нас:</h2>
+                <p>Данный сайт на тематику "Актеры театра и кино" спроектирован и сверстан студентом группы ИКБО-24-21
+                    </p>
+
+            </div>
+            <div class="navbar">
+                <h2>Навигация:</h2>
+                <li><a data-goto=".content__h1.theatre" href="index.html" class="menu__link">Театр</a></li>
+                <li><a data-goto=".content__h1.movies" href="index.html" class="menu__link">Кино</a></li>
+                <li><a data-goto=" " href="gallery.html" class="menu__link">Галерея</a></li>
+                <li><a data-goto=" " href="addActor.html" class="menu__link">Добавить актера</a></li>
+                <li><a data-goto=" " href="discussion.html" class="menu__link">Обсуждение</a></li>
+                <li><a data-goto=" " href="login.html" class="menu__link">Вход</a></li>
+            </div>
+            <div class="contacts">
+                <h2>Контакты:</h2>
+                <div class="soc__networks">
+                    <div class="item">
+                        <a href="mailto:polonkoev.bers@gmail.com">
+                            <img src="../sources/logo/mail.jpeg" height="12"> 
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="tel: +79258517903">
+                            <img src="../sources/logo/tel.png" height="12">+7(925)-851-79-05
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://yandex.ru/maps/-/CCUniXA59D">
+                            <img src="../sources/logo/geo.png" height="12"> г.Москва, Проспект Вернадского д.86
+                        </a>
+                    </div>
+                    <ul class="wrapper">
+                        <li class="icon facebook">
+                            <span class="tooltip">Facebook</span>
+                            <span><i class="fa fa-facebook-f"></i></span>
+                        </li>
+                        <li class="icon twitter">
+                            <span class="tooltip">Twitter</span>
+                            <span><i class="fa fa-twitter"></i></span>
+                        </li>
+                        <li class="icon instagram">
+                            <span class="tooltip">Instagram</span>
+                            <span><i class="fa fa-instagram"></i></span>
+                        </li>
+                        <li class="icon github">
+                            <span class="tooltip">Github</span>
+                            <span><i class="fa fa-github"></i></span>
+                        </li>
+                        <li class="icon youtube">
+                            <span class="tooltip">Youtube</span>
+                            <span><i class="fa fa-youtube"></i></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="adress"></div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="js/script.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/modals.js"></script>
+<!-- <script src="js/fetch.js"></script> -->
+<!-- <script type="text/javascript" src="sources/persons.json"></script> -->
+
+
+</html>

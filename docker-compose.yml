@@ -1,0 +1,36 @@
+version: '3'
+services:
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8090:80
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - PMA_PASSWORD=pass
+      - PMA_ARBITRARY=1 
+    links:
+    - mysql
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+      MYSQL_DATABASE: trpp
+  go:
+    restart: on-failure
+    build: ./
+    ports:
+      - "8080:8080"
+    healthcheck:
+      interval: 60s
+      retries: 5
+      timeout: 10s
+    links:
+      - mysql
+    security_opt:
+      - no-new-privileges:true

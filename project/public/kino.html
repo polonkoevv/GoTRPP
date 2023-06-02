@@ -43,7 +43,7 @@
                     <li><a data-goto=" " href="gallery.html" class="menu__link">Галерея</a></li>
                     <li><a data-goto=" " href="addActor.html" class="menu__link">Добавить актера</a></li>
                     <li><a data-goto=" " href="discussion.html" class="menu__link">Обсуждение</a></li>
-                    <li><a data-goto=" " href="login.html" class="menu__link">Вход</a></li>
+                    <li><a data-goto=" " href="/auth/welcome" class="menu__link">Вход</a></li>
                 </ul>
             </nav>
         </div>
@@ -142,13 +142,13 @@
                     </p>
                 </div> -->
                 <!-- <h1 class="content__h1 theatre">Театр:</h1> -->
-                <div class="main__img theatre">
+                <!-- <div class="main__img theatre">
                     <img src="./sources/img/layers/bigTheatre.jpg" alt="" class="header__img">
-                </div>
+                </div> -->
                 <div class="theatre__wrapper">
                     <div class="theatre__wrapper_2nd">
 
-                        <div class="change_list">
+                        <!-- <div class="change_list">
                             <button value="1" id="change_list_btn" onclick="changeActors(10*0)">1</button>
                             <button value="2" id="change_list_btn" onclick="changeActors(10*1)">2</button>
                             <button value="3" id="change_list_btn" onclick="changeActors(10*2)">3</button>
@@ -161,10 +161,20 @@
                             <button value="10" id="change_list_btn" onclick="changeActors(10*9)">10</button>
                             <button value="11" id="change_list_btn" onclick="changeActors(10*10)">11</button>
                             <button value="12" id="change_list_btn" onclick="changeActors(10*11)">12</button>
-                        </div>
+                        </div> -->
     
                         <div class="actors">
-    
+
+                            {{.example}}
+                            
+                            {{ range .films}}<div class="actor">
+                                    <img src={{.posterUrl}} alt="Тут должно быть фото" class="img">
+                                    <form action="/film/" method="GET">
+                                        <button style="text-decoration: underline;" name="id" value="{{.filmId}}" type="submit" class="description">{{.nameRu}}</button>
+                                    </form>
+                                </div>
+                                {{else}}<div><strong>no rows</strong></div>
+                            {{end}}
     
     
                         </div>
@@ -465,7 +475,7 @@
 <script src="js/script.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/modals.js"></script>
-<script src="js/fetch.js"></script>
+<!-- <script src="js/fetch.js"></script> -->
 <!-- <script type="text/javascript" src="sources/persons.json"></script> -->
 
 

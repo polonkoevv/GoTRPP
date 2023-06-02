@@ -1,0 +1,84 @@
+
+main{
+    padding-top: 100px;
+    width: 100%;
+    align-content: center;
+}
+
+.container1{
+    font-size: 20px;
+    /* justify-self: center; */
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 0.3fr 0.3fr;
+    grid-template-rows: 0.3fr 0.3fr;
+    grid-gap: 20px;
+    width: 100%;
+}
+
+.container1>*{
+    background-color: gray;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.actor-list{
+    /* color: white; */
+    padding: 15px;
+    grid-column: 1 / 2;
+}
+
+.genre{
+    grid-column: 2 / 3;
+    
+}
+
+.genre>ul>li{
+    font-size: 14px;
+}
+
+.actor-name.button{
+    background-color: rgba(0,0,0,0);
+    margin-top: 7px;
+}
+
+.about{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    grid-template-rows: afr auto;
+    padding: 20px;
+}
+
+button{
+    font-size: 14px;
+    color: black;
+    background-color: rgba(0,0,0,0);
+    margin-top: 7px;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-self: flex-end;
+    grid-column: 1 / 3;
+    grid-row:2
+}
+
+.photo{
+
+    min-width: 100px;
+    max-width: 80%;
+}
+
+.photo>img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.description{
+    /* color: white; */
+    
+    grid-column: 1 / 3;
+}

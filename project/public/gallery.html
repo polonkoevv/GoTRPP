@@ -5,23 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="icon" href="sources/ico.png" type="image/png">.
-    <title>Movie</title>
-
     <link rel="stylesheet" href="css/reset1.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" /> -->
     <link rel="stylesheet" href="css/style1.css">
-    <link rel="stylesheet" href="css/contacts.css">
+    <link rel="stylesheet" href="css/gallery.css">
 
-
-
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Gallery</title>
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" >
         <div class="header__container">
             <a href="index.html" class="header__logo">ashar</a>
             <div class="header__menu menu">
@@ -31,42 +26,53 @@
             </div>
             <nav class="menu__body">
                 <ul class="menu__list">
-
                     <li><a data-goto="" href="index.html" class="menu__link">Главная</a></li>
-                    <li><a data-goto="" href="index.html" class="menu__link">Театр и кино</a></li>
+
+                    <li><a data-goto=".content__h1.movies" href="kino.html" class="menu__link">Театр и кино</a></li>
                     <li><a data-goto=" " href="gallery.html" class="menu__link">Галерея</a></li>
                     <li><a data-goto=" " href="addActor.html" class="menu__link">Добавить актера</a></li>
                     <li><a data-goto=" " href="discussion.html" class="menu__link">Обсуждение</a></li>
-                    <li><a data-goto=" " href="contacts.html" class="menu__link">Контакты</a></li>
-                    <li><a data-goto=" " href="login.html" class="menu__link">Вход</a></li>
+                    <li><a data-goto=" " href="/auth/welcome" class="menu__link">Вход</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
 
-
-    <main class="main">
-        <div class="container">
-            <div class="content">
-                <div class="contacts__map">
-                    <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/gosudarstvenny_ermitazh/1057721048/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Государственный Эрмитаж</a><a href="https://yandex.ru/maps/2/saint-petersburg/category/museum/184105894/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Музей в Санкт‑Петербурге</a><a href="https://yandex.ru/maps/2/saint-petersburg/category/landmark_attraction/89683368508/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Достопримечательность в Санкт‑Петербурге</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUrAWTfKD" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>                </div>
-                <div class="contacts__info"></div>
-            </div>
+    <main class="main gallery__main">
+        <div class="gallery__wrapper">
+            <div class="item"><img src="sources/img/gallery/Аль Пачино.webp" alt="" class="img_item"></div>
+            <div class="item"><img src="sources/img/gallery/Дженифер Лоуренс.jpg" alt="" class="img_item"></div>
+            <div class="item"><img src="sources/img/gallery/Джонни Депп.jpg" alt="" class="img_item"></div>
+            <div class="item"><img src="sources/img/gallery/Роберт ДеНиро.jpg" alt="" class="img_item"></div>
+            <div class="item"><img src="sources/img/gallery/Уилл Смитт.jpg" alt="" class="img_item"></div>
+            <div class="item"><img src="sources/img/gallery/Брэд Питт гор.jpg" alt="" class="img_item"></div>
+            <div class="item"><img src="sources/img/gallery/Роберт Дауни мл.webp" alt="" class="img_item"></div>
+            <div class="item"><img src="sources/img/gallery/Киллиан Мерфи гор.webp" alt="" class="img_item"></div>
+            <div class="item"><img src="sources/img/gallery/Анджолина Джоли.jpg" alt="" class="img_item"></div>
+            <div class="item"><img src="sources/img/gallery/Николас Кейдж.webp" alt="" class="img_item"></div>
+            <div class="item"><img src="sources/img/gallery/Кристиан Бэйл гор.jpg" alt="" class="img_item"></div>
+            <div class="item"><img src="sources/img/gallery/Криминальное чтивл.jpg" alt="" class="img_item"></div>
         </div>
     </main>
+
+
+
+   
+
+
+
 
     <footer class="footer">
         <div class="container">
             <div class="about__us">
                 <h2>О нас:</h2>
-                <p>Данный сайт на тематику "Актеры театра и кино" спроектирован и сверстан студентом группы ИКБО-24-21</p>
+                <p style="color:white">Данный сайт на тематику "Актеры театра и кино" спроектирован и сверстан студентом группы ИКБО-24-21</p>
 
             </div>
             <div class="navbar">
                 <h2>Навигация:</h2>
-                <li><a data-goto=".content__h1.theatre" href="index.html" class="menu__link">Театр</a></li>
-                <li><a data-goto=".content__h1.movies" href="index.html" class="menu__link">Кино</a></li>
+                <li><a data-goto=".content__h1.movies" href="index.html" class="menu__link">Театр и кино</a></li>
                 <li><a data-goto=" " href="gallery.html" class="menu__link">Галерея</a></li>
                 <li><a data-goto=" " href="addActor.html" class="menu__link">Добавить актера</a></li>
                 <li><a data-goto=" " href="discussion.html" class="menu__link">Обсуждение</a></li>
@@ -77,7 +83,7 @@
                 <div class="soc__networks">
                     <div class="item">
                         <a href="mailto:polonkoev.bers@gmail.com">
-                            <img src="sources/logo/mail.jpeg" height="12"> 
+                            <img src="sources/logo/mail.jpeg" height="12">
                         </a>
                     </div>
                     <div class="item">
@@ -120,9 +126,7 @@
             </div>
         </div>
     </footer>
-
 </body>
 <script src="js/script.js"></script>
-
 
 </html>

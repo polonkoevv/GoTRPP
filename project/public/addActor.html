@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/reset1.css">
     <link rel="stylesheet" href="css/style1.css">
-    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/form.css">
 
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Gallery</title>
+    <title>Ad actor:</title>
 </head>
 
 <body>
@@ -32,42 +33,86 @@
                     <li><a data-goto=" " href="gallery.html" class="menu__link">Галерея</a></li>
                     <li><a data-goto=" " href="addActor.html" class="menu__link">Добавить актера</a></li>
                     <li><a data-goto=" " href="discussion.html" class="menu__link">Обсуждение</a></li>
-                    <li><a data-goto=" " href="login.html" class="menu__link">Вход</a></li>
+                    <li><a data-goto=" " href="/auth/welcome" class="menu__link">Вход</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <main class="main">
+        <div class="container">
+            <div class="content">
+                <h2>Создайте заявку на добавление актера</h2>
+                <form action="addactor" class="form1" method="get" enctype="multipart/form-data" id="form">
 
-    <main class="main gallery__main">
-        <div class="gallery__wrapper">
-            <div class="item"><img src="sources/img/gallery/Аль Пачино.webp" alt="" class="img_item"></div>
-            <div class="item"><img src="sources/img/gallery/Дженифер Лоуренс.jpg" alt="" class="img_item"></div>
-            <div class="item"><img src="sources/img/gallery/Джонни Депп.jpg" alt="" class="img_item"></div>
-            <div class="item"><img src="sources/img/gallery/Роберт ДеНиро.jpg" alt="" class="img_item"></div>
-            <div class="item"><img src="sources/img/gallery/Уилл Смитт.jpg" alt="" class="img_item"></div>
-            <div class="item"><img src="sources/img/gallery/Брэд Питт гор.jpg" alt="" class="img_item"></div>
-            <div class="item"><img src="sources/img/gallery/Роберт Дауни мл.webp" alt="" class="img_item"></div>
-            <div class="item"><img src="sources/img/gallery/Киллиан Мерфи гор.webp" alt="" class="img_item"></div>
-            <div class="item"><img src="sources/img/gallery/Анджолина Джоли.jpg" alt="" class="img_item"></div>
-            <div class="item"><img src="sources/img/gallery/Николас Кейдж.webp" alt="" class="img_item"></div>
-            <div class="item"><img src="sources/img/gallery/Кристиан Бэйл гор.jpg" alt="" class="img_item"></div>
-            <div class="item"><img src="sources/img/gallery/Криминальное чтивл.jpg" alt="" class="img_item"></div>
+                    <fieldset class="block1">
+
+                        <legend>Личная информация</legend>
+                        <div>
+                            <label for="first_name">Имя актера:</label>
+                            <br>
+                            <input placeholder="Том" autocomplete="off" required type="text" name="fio" placeholder="">
+                        </div>
+                        <div>
+                            <label for="second_name">Фамилия актера:</label>
+                            <br>
+                            <input placeholder="Харди" autocomplete="off" required type="text" id="fio" name="fio" placeholder="">
+                        </div>
+
+                        <div>
+                            <label autocomplete="on" for="email">Почта:</label>
+                            <br>
+                            <input placeholder="example@gmail.com" autocomplete="off" required type="email" id="email" name="email">
+                        </div>
+
+                        <div>Пол:<br>
+                            <input required type="radio" id="cb1" name="gender" value="male">
+                            <label for="cb1">М</label>
+                            <br>
+                            <input required type="radio" id="cb2" name="gender" value="female">
+                            <label for="cb2">Ж</label>
+                        </div>
+                        <p>Об актере:</p>
+                            <textarea name="text_about_actor" cols="30" rows="10" maxlength="1000" minlength="50"
+                                required></textarea>
+
+                    </fieldset>
+                    <fieldset class="block2">
+                        <legend>Информация об актерской карьере</legend>
+                        <p>Актер:</p>
+                        <p><input type="checkbox" name="type_actor">Театра</p>
+                        <p><input type="checkbox" name="type_actor2">Кино</p>
+
+                        <p>Фото актера:</p>
+                            <input type="file" name="photo">
+
+                        <p>Место работы:</p>  
+                            <select multiple required size="8" name="counry">
+                                <option value="russia">Россия</option>
+                                <option value="USA">США</option>
+                                <option value="Spain">Испания</option>
+                                <option value="china">Китай</option>
+                                <option value="UK">Великобритания</option>
+                                <option value="France">Франция</option>
+                            </select>
+                    </fieldset>
+                    <div class="block3">
+                        <p>Номер телефона для связи:</p>
+                        <input placeholder="+7 (9**) *** ** - **" autocomplete="off" required type="tel" name="tel" pattern="[/+]*[0-9]+">
+
+                        <br>
+                        <button type="submit">Отправить</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
-
-
-
-   
-
-
-
 
     <footer class="footer">
         <div class="container">
             <div class="about__us">
                 <h2>О нас:</h2>
-                <p style="color:white">Данный сайт на тематику "Актеры театра и кино" спроектирован и сверстан студентом группы ИКБО-24-21</p>
+                <p>Данный сайт на тематику "Актеры театра и кино" спроектирован и сверстан студентом группы ИКБО-24-21</p>
 
             </div>
             <div class="navbar">
@@ -82,8 +127,8 @@
                 <h2>Контакты:</h2>
                 <div class="soc__networks">
                     <div class="item">
-                        <a href="mailto:polonkoev.bers@gmail.com">
-                            <img src="sources/logo/mail.jpeg" height="12">
+                        <a href="mailto:">
+                            <img src="sources/logo/mail.jpeg" height="12"> polonkoev.bers@gmail.com
                         </a>
                     </div>
                     <div class="item">
@@ -93,7 +138,7 @@
                     </div>
                     <div class="item">
                         <a
-                            href="https://yandex.ru/maps/-/CCUniXA59D">
+                        href="https://yandex.ru/maps/-/CCUniXA59D">
                             <img src="sources/logo/geo.png" height="12"> Республика Ингушетия, г.Магас, ул.Д.Мальсагова
                             26.
                         </a>

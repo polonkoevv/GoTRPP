@@ -1,0 +1,29 @@
+FUNCTIONS
+
+func Logout(w http.ResponseWriter, r *http.Request)
+func Refresh(w http.ResponseWriter, r *http.Request)
+func Register(w http.ResponseWriter, r *http.Request)        
+func Signin(w http.ResponseWriter, r *http.Request)
+func Welcome(w http.ResponseWriter, r *http.Request)
+
+TYPES
+
+type Credentials struct {
+        Password string `json:"password"`
+        Username string `json:"username"`
+}
+    Create a struct that models the structure of a user in the request body
+
+type NewUser struct {
+        Name     string `json:"name"`
+        Surname  string `json:"surname"`
+        Password string `json:"password"`
+        Username string `json:"username"`
+}
+
+type Store struct {
+        Dbname     string
+        Schemaname string
+        DBpass     string
+}
+

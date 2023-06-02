@@ -83,7 +83,7 @@ func Signin(w http.ResponseWriter, r *http.Request) {
 
 	// Create a new random session token
 	sessionToken := uuid.NewString()
-	expiresAt := time.Now().Add(120 * time.Second)
+	expiresAt := time.Now().Add(120 * time.Minute)
 
 	// Set the token in the session map, along with the user whom it represents
 	sessions[sessionToken] = session{
@@ -100,7 +100,7 @@ func Signin(w http.ResponseWriter, r *http.Request) {
 	})
 
 	fmt.Println("Logged in successefully")
-	http.Redirect(w, r, "/", 303)
+	http.Redirect(w, r, "/profile", 303)
 }
 
 func Welcome(w http.ResponseWriter, r *http.Request) {
@@ -109,7 +109,43 @@ func Welcome(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		if err == http.ErrNoCookie {
 			// If the cookie is not set, return an unauthorized status
-			w.WriteHeader(http.StatusUnauthorized)
+			// w.WriteHeader(http.StatusUnauthorized)
+			http.Redirect(w, r, "/login", http.StatusSeeOther)
+			return
+		}
+		// For any other type of error, return a bad request status
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+	sessionToken := c.Value
+
+	// We then get the name of the user from our session map, where we set the session token
+	userSession, exists := sessions[sessionToken]
+	if !exists {
+		// If the session token is not present in session map, return an unauthorized error
+		// w.WriteHeader(http.StatusUnauthorized)
+		http.Redirect(w, r, "/login", http.StatusSeeOther)
+		return
+	}
+	if userSession.isExpired() {
+		delete(sessions, sessionToken)
+		// w.WriteHeader(http.StatusUnauthorized)
+		http.Redirect(w, r, "/login", http.StatusSeeOther)
+		return
+	}
+	// Finally, return the welcome message to the user
+	http.Redirect(w, r, "/profile", http.StatusSeeOther)
+}
+
+func loginwelcome(w http.ResponseWriter, r *http.Request) {
+	// We can obtain the session token from the requests cookies, which come with every request
+	c, err := r.Cookie("session_token")
+	if err != nil {
+		if err == http.ErrNoCookie {
+			// If the cookie is not set, return an unauthorized status
+			// w.WriteHeader(http.StatusUnauthorized)
+			fmt.Println(1)
+			http.Redirect(w, r, "/login", http.StatusSeeOther)
 			return
 		}
 		// For any other type of error, return a bad request status
@@ -123,15 +159,20 @@ func Welcome(w http.ResponseWriter, r *http.Request) {
 	if !exists {
 		// If the session token is not present in session map, return an unauthorized error
 		w.WriteHeader(http.StatusUnauthorized)
+		// http.Redirect(w, r, "/login", 0)
+		fmt.Println(2)
+		http.Redirect(w, r, "/login", http.StatusSeeOther)
 		return
 	}
 	if userSession.isExpired() {
 		delete(sessions, sessionToken)
 		w.WriteHeader(http.StatusUnauthorized)
+		// http.Redirect(w, r, "/login", http.StatusSeeOther)
 		return
 	}
 	// Finally, return the welcome message to the user
-	w.Write([]byte(fmt.Sprintf("Welcome %s!", userSession.username)))
+	http.Redirect(w, r, "/profile", http.StatusSeeOther)
+
 }
 
 func Refresh(w http.ResponseWriter, r *http.Request) {
@@ -205,6 +246,8 @@ func Logout(w http.ResponseWriter, r *http.Request) {
 		Value:   "",
 		Expires: time.Now(),
 	})
+
+	http.Redirect(w, r, "/", 303)
 }
 
 func Register(w http.ResponseWriter, r *http.Request) {

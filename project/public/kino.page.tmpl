@@ -1,0 +1,484 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="sources/ico.png" type="image/png">.
+    <title>Movie</title>
+
+    <link rel="stylesheet" href="css/reset1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style1.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">ashar</a>
+            <div class="header__menu menu">
+                <div class="menu__icon">
+                    <span></span>
+                </div>
+            </div>
+            <nav class="menu__body">
+                <ul class="menu__list">
+                    <li><a data-goto="" href="index.html" class="menu__link">Главная</a></li>
+
+                    <li><a data-goto=".main__img.theatre" href="kino.html" class="menu__link">Театр</a></li>
+                    <li><a data-goto=".main__img.movies" href="kino.html" class="menu__link">Кино</a></li>
+                    <li><a data-goto=" " href="gallery.html" class="menu__link">Галерея</a></li>
+                    <li><a data-goto=" " href="addActor.html" class="menu__link">Добавить актера</a></li>
+                    <li><a data-goto=" " href="discussion.html" class="menu__link">Обсуждение</a></li>
+                    <li><a data-goto=" " href="/auth/welcome" class="menu__link">Вход</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="modals">
+        <div class="modal-overlay">
+            <div class="modal modal--1" data-target="form-popup">
+                <div class="modal__content">
+                    <div class="img__modal__wrap">
+                        <img src="./sources/img/cinema/Том Харди.webp" height="100%" alt="">
+                    </div>
+                    <div class="modal__info">
+                        <h1 class="modal__h1">Том Харди:</h1>
+                        <div class="bio__wrapper">
+                            <div class="bio">
+                                <p class="pre">Карьера<br>
+                                    Рост<br>
+                                    Дата рождения<br>Место рождения<br>
+                                    Жанры</p>
+                                <p class="post">
+                                    Актер, Продюсер, Сценарист<br>
+                                    1.75 м<br>
+                                    15 сентября, 1977 45 лет<br>
+                                    Лондон, Англия, Великобритания<br>
+                                    Драма, триллер, боевик</p>
+
+                            </div>
+                            <div class="rewards">
+
+                                <p>Награды:<br>
+                                    Премия канала «MTV», 2019 год<br>
+                                    Оскар, 2016 год<br>
+                                    Премия канала «MTV», 2016 год<br>
+                                    Жорж, 2016 год<br>
+                                    Европейская киноакадемия, 2014 год<br>
+                                    Премия канала «MTV», 2013 год<br>
+                                </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal modal--2" data-target="me-popup">
+                <div class="modal__content">
+                    <div class="img__modal__wrap">
+                        <img src="./sources/img/cinema/Шайа-ЛаБаф.jpeg" height="100%" alt="">
+                    </div>
+                    <div class="modal__info">
+                        <h1 class="modal__h1">Шайа ЛаБаф:</h1>
+                        <div class="bio__wrapper">
+                            <div class="bio">
+                                <p class="pre">Карьера<br>
+                                    Рост<br>
+                                    Дата рождения<br>Место рождения<br>
+                                    Жанры</p>
+                                <p class="post">
+                                    Актер, Продюсер, Сценарист<br>
+                                    1.75 м<br>
+                                    15 сентября, 1977 45 лет<br>
+                                    Лондон, Англия, Великобритания<br>
+                                    Драма, триллер, боевик</p>
+
+                            </div>
+                            <p class="rewards">Награды:<br>
+                                Премия канала «MTV», 2019 год<br>
+                                Оскар, 2016 год<br>
+                                Премия канала «MTV», 2016 год<br>
+                                Жорж, 2016 год<br>
+                                Европейская киноакадемия, 2014 год<br>
+                                Премия канала «MTV», 2013 год<br>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <main class="main">
+        <div class="container">
+            <div class="content">
+
+                <!-- <div class="info__bar">
+                    <h2>О сайте:</h2>
+                    <p>На данном сайте вам доступна краткая <br> информация об актерах театра и кино, <br> а также
+                        обсуждение их на специальном форуме.
+                    </p>
+                </div> -->
+                <!-- <h1 class="content__h1 theatre">Театр:</h1> -->
+                <div class="main__img theatre">
+                    <img src="./sources/img/layers/bigTheatre.jpg" alt="" class="header__img">
+                </div>
+                <div class="theatre__wrapper">
+                    <div class="theatre__wrapper_2nd">
+
+                        <div class="change_list">
+                            <button value="1" id="change_list_btn" onclick="changeActors(10*0)">1</button>
+                            <button value="2" id="change_list_btn" onclick="changeActors(10*1)">2</button>
+                            <button value="3" id="change_list_btn" onclick="changeActors(10*2)">3</button>
+                            <button value="4" id="change_list_btn" onclick="changeActors(10*3)">4</button>
+                            <button value="5" id="change_list_btn" onclick="changeActors(10*4)">5</button>
+                            <button value="6" id="change_list_btn" onclick="changeActors(10*5)">6</button>
+                            <button value="7" id="change_list_btn" onclick="changeActors(10*6)">7</button>
+                            <button value="8" id="change_list_btn" onclick="changeActors(10*7)">8</button>
+                            <button value="9" id="change_list_btn" onclick="changeActors(10*8)">9</button>
+                            <button value="10" id="change_list_btn" onclick="changeActors(10*9)">10</button>
+                            <button value="11" id="change_list_btn" onclick="changeActors(10*10)">11</button>
+                            <button value="12" id="change_list_btn" onclick="changeActors(10*11)">12</button>
+                        </div>
+    
+                        <div class="actors">
+
+                            {{.example}}
+                            
+                            {{ range .Items }}<div class="actor">
+                                    <img src="{{.}}" alt="Тут должно быть фото" class="img">
+                                    <form action="/actors/{{.}}" method="POST">
+                                        <button style="text-decoration: underline;" type="submit" class="description">{{.}}</button>
+                                    </form>
+                                </div>
+                                {{else}}<div><strong>no rows</strong></div>
+                            {{end}}
+    
+    
+                        </div>
+
+                    </div>
+                    
+
+                </div>
+                <div class="interlayer"></div>
+
+                <div class="main__img  movies">
+                    <img src="./sources/img/layers/кинотеатр.jpg" alt="" class="header__img">
+                </div>
+                <h1 class="content__h1 movies"></h1>
+                <div class="swiper_wrapper">
+                    <div class="swipe_main">
+                        <div class="swiper mySwiper_1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Том Харди.webp">
+                                    <p class="description">Том Харди</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Том Харди Острые Козырьки.jpg">
+                                    <p class="description">Альфи Соломонс <br> Сериал "Острые козырьки"</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Том Харди Чарльз Бронсон.png">
+                                    <p class="description">Чарльз Бронсон <br> Фильм "Бронсон"</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="to_blur" src="./sources/img/cinema/Том Харди.webp">
+                                    <p class="description description__top">Э́двард То́мас «Том» Ха́рди — английский
+                                        актёр, продюсер и сценарист. Обладатель премии BAFTA и номинант на премию
+                                        «Оскар». Прославился благодаря фильму «Стюарт: Прошлая жизнь», где он сыграл
+                                        роль наркомана и бездомного Стюарта Шортера, принёсшую ему номинацию на премию
+                                        BAFTA. Также известен по своим главным и второстепенным ролям в фильмах, таких
+                                        .</p>
+                                    <button class="btn description description__more"
+                                        data-path="form-popup">Подробнее</button>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+
+                            <div class="swiper-button-next button"></div>
+                            <div class="swiper-button-prev button"></div>
+                        </div>
+
+                    </div>
+                    <div class="swipe_main">
+                        <div class="swiper mySwiper_2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Шайа-ЛаБаф.jpeg">
+                                    <p class="description">Шайа ЛаБаф</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Шайа ЛаБаф Трансформеры.jpg">
+                                    <p class="description">Сэм Уитуики из к.ф. "Трансформеры"</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Шайя ЛаБаф Ярость.jpg">
+                                    <p class="description">Бойд "Святоша" из к.ф. "Ярость"</p>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img class="to_blur" src="./sources/img/cinema/Шайа-ЛаБаф.jpeg">
+                                    <p class="description description__top">Родился 11 июня 1986 года в Лос-Анджелесе во
+                                        франко-еврейской семье[3]. Его родители — цирковой клоун Джеффри Крейг Лабаф (по
+                                        происхождению франко-каджун) и выступавшая в ночном клубе танцовщица (в
+                                        дальнейшем — художница и дизайнер[4]) Шейна Лабаф, урождённая Саид</p>
+                                    <button class="btn description description__more"
+                                        data-path="me-popup">Подробнее</button>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+
+                            <div class="swiper-button-next button"></div>
+                            <div class="swiper-button-prev button"></div>
+                        </div>
+                    </div>
+
+                    <div class="swipe_main">
+                        <div class="swiper mySwiper_3">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Брэд Питт.webp">
+                                    <p class="description">Брэд Питт</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Брэд Питт Бойцовский Клуб.png">
+                                    <p class="description">Тайлер Дёрден из к.ф. "Бойцовский клуб"</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Брэд Питт Большой Куш.jpg">
+                                    <p class="description">Микки-цыган из к.ф. "Большой куш"</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="to_blur" src="./sources/img/cinema/Брэд Питт.webp">
+                                    <p class="description description__top">Полное имя — Уильям Брэдли Питт (William
+                                        Bradley Pitt).
+                                        Родился в очень религиозной семье. Отец был менеджером, мать — учительницей.
+                                        После окончания школы учился на журналиста.
+                                        Прежде чем к нему пришел актерский успех, Питт работал водителем, перевозчиком
+                                        мебели и даже зазывалой в сети ресторанов «El Pollo Loco».
+                                        У Брэда есть брат (Даг Питт) и сестра (Джулия Питт).
+                                        Вырос в Спрингфилде (штат Миссури), куда семья переехала вскоре после его
+                                        рождения.
+                                        В 1996 году был помолвлен с актрисой Гвинет Пэлтроу.
+                                        В средней школе имел прозвище Брэд «Питт-буль»
+                                        У Брэда Питта шесть детей от брака с Анджелиной Джоли: Мэддокс Чиван (05.08.01)
+                                    </p>
+                                    <p class="description description__more">Подробнее</p>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+
+                            <div class="swiper-button-next button"></div>
+                            <div class="swiper-button-prev button"></div>
+                        </div>
+                    </div>
+
+                    <div class="swipe_main">
+                        <div class="swiper mySwiper_4">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Мэтью МакКонахи.webp">
+                                    <p class="description">Мэтью МакКонахи</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Мэтью МакКонахи Джентльмены.jpg">
+                                    <p class="description">Том Хэнкс</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Мэтью МакКонахи Линкольн для адвоката.jpg">
+                                    <p class="description">Шайа ЛаБаф</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="to_blur" src="./sources/img/cinema/Мэтью МакКонахи.webp">
+                                    <p class="description description__top">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Quasi vitae rem sint, corrupti corporis laboriosam explicabo
+                                        autem suscipit quaerat, perferendis esse delectus maiores aperiam cupiditate
+                                        quam minus veritatis aliquid quod enim magni, dolores voluptatem ducimus. Ipsam
+                                        repudiandae esse obcaecati. Atque dolore quidem adipisci sapiente exercitationem
+                                        sunt voluptates praesentium quod ex!</p>
+                                    <p class="description description__more">Подробнее</p>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+
+                            <div class="swiper-button-next button"></div>
+                            <div class="swiper-button-prev button"></div>
+                        </div>
+                    </div>
+
+                    <div class="swipe_main">
+                        <div class="swiper mySwiper_5">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Аль Пачино.webp">
+                                    <p class="description">Аль Пачино</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Аль Пачино Лицо со шрамомjpg.jpg">
+                                    <p class="description">Том Хэнкс</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Аль Пачино Крестный Отец.jpeg">
+                                    <p class="description">Шайа ЛаБаф</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="to_blur" src="./sources/img/cinema/Аль Пачино.webp">
+                                    <p class="description description__top">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Quasi vitae rem sint, corrupti corporis laboriosam explicabo
+                                        autem suscipit quaerat, perferendis esse delectus maiores aperiam cupiditate
+                                        quam minus veritatis aliquid quod enim magni, dolores voluptatem ducimus. Ipsam
+                                        repudiandae esse obcaecati. Atque dolore quidem adipisci sapiente exercitationem
+                                        sunt voluptates praesentium quod ex!</p>
+                                    <p class="description description__more">Подробнее</p>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+
+                            <div class="swiper-button-next button"></div>
+                            <div class="swiper-button-prev button"></div>
+                        </div>
+                    </div>
+
+                    <div class="swipe_main">
+                        <div class="swiper mySwiper_6">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Тоби Магуайр.webp">
+                                    <p class="description">Тоби Магуайр</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Тоби Магуайр Человек Паук.jpg">
+                                    <p class="description">Том Хэнкс</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./sources/img/cinema/Тоби Магуайр Братья.jpg">
+                                    <p class="description">Шайа ЛаБаф</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="to_blur" src="./sources/img/cinema/Тоби Магуайр.webp">
+                                    <p class="description description__top">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Quasi vitae rem sint, corrupti corporis laboriosam explicabo
+                                        autem suscipit quaerat, perferendis esse delectus maiores aperiam cupiditate
+                                        quam minus veritatis aliquid quod enim magni, dolores voluptatem ducimus. Ipsam
+                                        repudiandae esse obcaecati. Atque dolore quidem adipisci sapiente exercitationem
+                                        sunt voluptates praesentium quod ex!</p>
+                                    <p class="description description__more">Подробнее</p>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+
+                            <div class="swiper-button-next button"></div>
+                            <div class="swiper-button-prev button"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </main>
+
+    <a data-goto=".header" href="kino.html" class="menu__link toUp" id="toUp">Вверх <i class="fa fa-arrow-up"
+            aria-hidden="false"></i></a>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="about__us">
+                <h2>О нас:</h2>
+                <p>Данный сайт на тематику "Актеры театра и кино" спроектирован и сверстан студентом группы ИКБО-24-21
+                    </p>
+
+            </div>
+            <div class="navbar">
+                <h2>Навигация:</h2>
+                <li><a data-goto=".content__h1.theatre" href="index.html" class="menu__link">Театр</a></li>
+                <li><a data-goto=".content__h1.movies" href="index.html" class="menu__link">Кино</a></li>
+                <li><a data-goto=" " href="gallery.html" class="menu__link">Галерея</a></li>
+                <li><a data-goto=" " href="addActor.html" class="menu__link">Добавить актера</a></li>
+                <li><a data-goto=" " href="discussion.html" class="menu__link">Обсуждение</a></li>
+                <li><a data-goto=" " href="login.html" class="menu__link">Вход</a></li>
+            </div>
+            <div class="contacts">
+                <h2>Контакты:</h2>
+                <div class="soc__networks">
+                    <div class="item">
+                        <a href="mailto:polonkoev.bers@gmail.com">
+                            <img src="sources/logo/mail.jpeg" height="12"> 
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="tel: +79258517903">
+                            <img src="sources/logo/tel.png" height="12">+7(925)-851-79-05
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://yandex.ru/maps/-/CCUniXA59D">
+                            <img src="sources/logo/geo.png" height="12"> г.Москва, Проспект Вернадского д.86
+                        </a>
+                    </div>
+                    <ul class="wrapper">
+                        <li class="icon facebook">
+                            <span class="tooltip">Facebook</span>
+                            <span><i class="fa fa-facebook-f"></i></span>
+                        </li>
+                        <li class="icon twitter">
+                            <span class="tooltip">Twitter</span>
+                            <span><i class="fa fa-twitter"></i></span>
+                        </li>
+                        <li class="icon instagram">
+                            <span class="tooltip">Instagram</span>
+                            <span><i class="fa fa-instagram"></i></span>
+                        </li>
+                        <li class="icon github">
+                            <span class="tooltip">Github</span>
+                            <span><i class="fa fa-github"></i></span>
+                        </li>
+                        <li class="icon youtube">
+                            <span class="tooltip">Youtube</span>
+                            <span><i class="fa fa-youtube"></i></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="adress"></div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="js/script.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/modals.js"></script>
+<!-- <script src="js/fetch.js"></script> -->
+<!-- <script type="text/javascript" src="sources/persons.json"></script> -->
+
+
+</html>
+{{end}}

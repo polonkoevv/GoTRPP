@@ -8,13 +8,13 @@
 
     <link rel="stylesheet" href="css/reset1.css">
     <link rel="stylesheet" href="css/style1.css">
-    <link rel="stylesheet" href="css/profile.css">
-
+    
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <title>Account</title>
+    
+    <link rel="stylesheet" href="css/profile.css">
+    <title>Личный кабинет</title>
 </head>
 
 <body>
@@ -34,35 +34,35 @@
                     <li><a data-goto=" " href="gallery.html" class="menu__link">Галерея</a></li>
                     <li><a data-goto=" " href="addActor.html" class="menu__link">Добавить актера</a></li>
                     <li><a data-goto=" " href="discussion.html" class="menu__link">Обсуждение</a></li>
-                    <li><a data-goto=" " href="login.html" class="menu__link">Вход</a></li>
+                    <li><a data-goto=" " href="/auth/welcome" class="menu__link">Вход</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="main" style="margin-top: 100px;">
-        <div class="container">
+        <div class="container1">
             <div class="content">
-                <div class="about_user">
-                    <div class="name">
-                        <p>Имя: </p>
-                        <p>Bers</p>
-                    </div>
-                    <div class="name">
-                        <p>Фамилия: </p>
-                        <p>Polonkoev</p>
-                    </div>
-                    <div class="name">
+                <div class="about_u">
+                    <div class="name username">
                         <p>Имя пользователя:</p>
-                        <p>Bersnakx</p>
+                        <p>{{.username}}</p>
+                    </div>
+
+
+                    <div class="buttonss">
+                        <form method="GET" action="/logout"><button type="submit">ВЫЙТИ</button></form>
+                        <form method="GET" action="#"><button type="submit">ИЗМЕНИТЬ ДАННЫЕ</button></form>
                     </div>
                     
                 </div>
         
                 <div class="form_wrapper">
                     <p>Отправленные формы:</p>
-                    <div class="forms">
-        
+                    <div class="films">
+                        {{range $film, $id := .films}}
+                            <div ><a href="/film/?id={{$id}}">{{$film}}</a> </div>
+                        {{end}}
                     </div>
                 </div>
             </div>
